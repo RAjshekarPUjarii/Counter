@@ -1,28 +1,29 @@
 const value = document.querySelector("#value");
 const btns = document.querySelectorAll(".btn");
-let count =0;
-btns.forEach(function (btn){
-    btn.addEventListener("click",function(e){
+let count = 0;
+btns.forEach(function (btn) {
+    //  added commits
+    btn.addEventListener("click", function (e) {
         // console.log(e.currentTarget.classList)
         const styles = e.currentTarget.classList;
-        if(styles.contains("increase")){
+        if (styles.contains("increase")) {
             count++;
         }
-        else if(styles.contains("decrease")){
+        else if (styles.contains("decrease")) {
             count--;
         }
-        else{
+        else {
             count = 0;
         }
-        if(count>0){
-            value.style.color="green";
+        if (count > 0) {
+            value.style.color = "green";
         }
-        if(count<0){
-            value.style.color="red";
+        if (count < 0) {
+            value.style.color = "red";
         }
-        if(count == 0){
-        value.style.color="black";
+        if (count == 0) {
+            value.style.color = "black";
         }
-        value.textContent=count;
+        value.textContent = count;
     });
 });
